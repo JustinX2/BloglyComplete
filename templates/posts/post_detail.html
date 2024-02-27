@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<article>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+    <p>Posted on: {{ post.created_at }}</p>
+</article>
+
+<a href="/posts/{{ post.id }}/edit">Edit</a>
+<form action="/posts/{{ post.id }}/delete" method="post">
+    <input type="submit" value="Delete" onclick="return confirm('Are you sure to delete?')">
+</form>
+
+<a href="/users/{{ post.user_id }}">Back to User Profile</a>
+    
+{% endblock %}
+    
