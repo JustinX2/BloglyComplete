@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>User Detail</h1>
+<img src="{{ user.image_url }}" alt="User image">
+<h2>{{ user.first_name }} {{ user.last_name }}</h2>
+<a href="/users/{{ user.id }}/edit">Edit</a>
+<form action="/users/{{ user.id }}/delete" method="post">
+    <input type="submit" value="Delete" onclick="return confirm('Are you sure to delete?')">
+</form>
+{% endblock %}
